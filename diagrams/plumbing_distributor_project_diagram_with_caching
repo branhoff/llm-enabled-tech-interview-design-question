@@ -1,0 +1,28 @@
+// Technical Solution Design for Plumbing Distributor Project
+digraph {
+	rankdir=LR
+	A [label="User Interface (Web/Chatbot)" shape=rectangle]
+	B [label="Natural Language Query Processing
+(LLM like GPT-3)" shape=component]
+	C [label="OCR Processing
+(e.g., Tesseract OCR)" shape=cylinder]
+	D [label="Catalog Image Database
+(e.g., File Share)" shape=folder]
+	E [label="Text Indexing & Search
+(e.g., Elasticsearch)" shape=cylinder]
+	F [label="Customer Order History Query" shape=component]
+	G [label="Netsuite API Integration" shape=cylinder]
+	H [label="Unified Query Interface" shape=component]
+	I [label="Caching Layer" shape=folder]
+	A -> B [label="interprets via"]
+	B -> H [label="processes queries for"]
+	C -> D [label="extracts text from"]
+	C -> E [label="feeds into"]
+	D -> C [label=stores]
+	E -> H [label="provides search results to"]
+	F -> G [label="retrieves data via"]
+	G -> H [label="integrates with"]
+	H -> A [label="displays results in"]
+	H -> I [label="caches results with"]
+	I -> H [label="serves cached results to"]
+}

@@ -1,7 +1,8 @@
 // Adapted Technical Approach Overview Without LLM
 digraph {
 	rankdir=LR
-	A [label="User Interface (Web/Chatbot)" shape=rectangle]
+	A [label="User Interface
+(Direct Query Interface)" shape=rectangle]
 	B [label="OCR Processing
 (e.g., Tesseract OCR)" shape=cylinder]
 	C [label="Catalog Image Database
@@ -10,14 +11,9 @@ digraph {
 (e.g., Elasticsearch)" shape=cylinder]
 	E [label="Customer Order History Query" shape=component]
 	F [label="Netsuite API Integration" shape=cylinder]
-	G [label="Caching Layer" shape=folder]
-	A -> B [label="initiates OCR Processing"]
-	B -> C [label="extracts text from"]
-	C -> B [label=stores]
-	B -> D [label="feeds into"]
-	A -> D [label="searches via"]
-	A -> E [label=requests]
+	C -> B [label="processed by OCR to extract text"]
+	B -> D [label="text indexed in"]
+	A -> D [label=queries]
+	A -> E [label="requests order history"]
 	E -> F [label="retrieves from"]
-	E -> G [label="caches results with"]
-	G -> F [label=supplements]
 }
