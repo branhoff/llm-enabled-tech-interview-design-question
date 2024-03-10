@@ -1,0 +1,16 @@
+// Technical Approach Overview
+digraph {
+	A [label="User Interface"]
+	B [label="Image Catalog Search"]
+	C [label="OCR Processing (e.g., Google Cloud Vision)"]
+	D [label="Image Indexing (e.g., Elasticsearch)"]
+	E [label="Customer Order History Query"]
+	F [label="Netsuite API Integration"]
+	G [label="Caching Layer"]
+	A -> B
+	B -> C
+	B -> D
+	A -> E [constraint=false]
+	E -> F
+	E -> G
+}

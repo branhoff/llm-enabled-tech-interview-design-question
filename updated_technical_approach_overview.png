@@ -1,0 +1,21 @@
+// Technical Approach Overview
+digraph {
+	rankdir=LR
+	A [label="User Interface" shape=rectangle]
+	B [label="Image Catalog Search" shape=component]
+	C [label="OCR Processing
+(e.g., Google Cloud Vision)" shape=cylinder]
+	D [label="Image Indexing
+(e.g., Elasticsearch)" shape=cylinder]
+	E [label="Customer Order History Query" shape=component]
+	F [label="Netsuite API Integration" shape=cylinder]
+	G [label="Caching Layer" shape=folder]
+	A -> B [label=triggers]
+	B -> C [label=uses]
+	C -> D [label="feeds into"]
+	B -> D [label=queries]
+	A -> E [label=requests]
+	E -> F [label="retrieves from"]
+	E -> G [label="caches with"]
+	G -> F [label=backs]
+}
